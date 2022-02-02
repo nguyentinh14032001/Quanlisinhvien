@@ -196,7 +196,7 @@ namespace projectCK.Controllers
                         {
                             l.MaSV,
                             l.HoDemSV,
-                            l.TenS,
+                            l.TenSV,
                             l.Email,
                             l.GioiTinh,
                             l.Malop,
