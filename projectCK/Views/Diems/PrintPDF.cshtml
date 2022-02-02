@@ -1,0 +1,51 @@
+﻿@model List<projectCK.Models.Diem>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<style>
+    * {
+        font-size: 20px;
+    }
+    .rounded-circle {
+        width: 30px;
+        height: 30px;
+        -moz-border-radius: 60px;
+        -webkit-border-radius: 60px;
+        border-radius: 60px;
+    }
+</style>
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Mã sinh viên</th>
+            <th>Họ đệm</th>
+            <th>Tên sinh viên</th>
+            <th>Tên môn học</th>
+            <th>Năm học</th>
+            <th>Học kỳ</th>
+            <th>Chuyên cần</th>
+            <th>Giữa kỳ</th>
+            <th>Cuối kỳ</th>
+            <th>ĐTB</th>
+            <th>Điểm chữ</th>
+            <th>Kết quả</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.SinhVien.MaSV</td>
+                <td>@item.SinhVien.HoDemSV</td>
+                <td>@item.SinhVien.TenSV</td>
+                <td>@item.MonHoc.TenMH</td>
+                <td>@item.NamHoc</td>
+                <td>@item.HocKy</td>
+                <td>@item.DiemCC</td>
+                <td>@item.DiemGK</td>
+                <td>@item.DiemCC</td>
+                <td>@item.DTB</td>
+                <td>@item.DiemChu</td>
+                <td><img class="rounded-circle" src="~/Content/IMG/@item.KetQua" /></td>
+            </tr>
+        }
+    </tbody>
+</table>

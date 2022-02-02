@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "gv_SinhVien_Index";
+    Layout = "~/Views/Shared/GiangVien__Layout.cshtml";
+}
+
+<div class="card">
+
+    <div class="card-header mb-3">
+
+
+        <div class="header-content">
+            <strong style="font-size:30px;" class="text-uppercase">Sinh viên</strong>
+        </div>
+    </div>
+    <div class="card-body p-3">
+        <table class="table table-bordered table-hover" id="result">
+            <thead>
+                <tr>
+                    <th class="text-center">Mã sinh viên</th>
+                    <th class="text-center">Họ đệm</th>
+                    <th class="text-center">Tên</th>
+                    <th class="text-center">Giới tính</th>
+                    <th class="text-center">Email</th>
+                    <th class="text-center">Ngày sinh</th>
+                    <th class="text-center">Mật khẩu</th>
+                    <th class="text-center">Lớp</th>
+                    <th class="text-center">Hình ảnh</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="@item.MaSV">
+                        <td class="text-center">@item.MaSV</td>
+                        <td class="text-center">@item.HoDemSV</td>
+                        <td class="text-center">@item.TenSV</td>
+                        @if (item.GioiTinh == false)
+                        {
+                            <td class="text-center">Nữ</td>
+                        }
+                        else
+                        {
+                            <td class="text-center">Nam</td>
+                        }
+                        <td class="text-center">@item.Email</td>
+                        <td class="text-center">@item.NgaySinh</td>
+                        <td class="text-center">@item.MatKhau</td>
+                        <td class="text-center">@item.Lop.TenLop</td>
+                        <td class="text-center"><img src="~/Content/IMG/@item.HinhAnh" class="rounded-circle" style="width:100px; height:100px;" /></td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+

@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "sv_MonHoc_Index";
+    Layout = "~/Views/Shared/SinhVien_Layout.cshtml";
+}
+
+<div class="card d-flex">
+
+    <div class="card-header mb-3">
+
+       
+            <div class="header-content">
+                <strong style="font-size:30px;" class="text-uppercase">Danh sách môn học</strong>
+            </div>
+       
+        </div>
+
+    <div class="card-body p-3">
+        <table class="table table-bordered table-hover" id="result">
+            <thead>
+                <tr align='center'>
+                    <th class="text-center">Mã môn học</th>
+                    <th class="text-center">Tên môn học</th>
+                    <th class="text-center">Số tiết lý thuyết</th>
+                    <th class="text-center">Số tiết thực hành</th>
+                    <th class="text-center">Số tín chỉ</th>
+                    <th class="text-center">Tên khoa</th>
+
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="@item.MaMH">
+                        <td class="text-center">@item.MaMH</td>
+                        <td class="text-center">@item.TenMH</td>
+                        <td class="text-center">@item.SoTietLT</td>
+                        <td class="text-center">@item.SoTietTH</td>
+                        <td class="text-center">@item.STC</td>
+                        <td class="text-center">@item.Khoa.TenKhoa</td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <h5 id="view-bag">Số lượng môn học là: @ViewBag.SoLuong</h5>
+
+    </div>
+</div>
+

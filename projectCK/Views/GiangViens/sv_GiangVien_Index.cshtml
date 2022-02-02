@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "sv_GiangVien_Index";
+    Layout = "~/Views/Shared/SinhVien_layout.cshtml";
+}
+
+<div class="card">
+    <div class="card-header mb-3">
+
+        <div class="form-wrapper">
+            <div class="header-content">
+                <strong style="font-size:30px;" class="text-uppercase">Danh sách giảng viên</strong>
+            </div>
+        </div>
+    </div>
+    <div class="card-body p-3">
+        <table class="table table-bordered table-hover" id="result">
+            <thead>
+                <tr>
+                    <th class="text-center">Mã giảng viên</th>
+                    <th class="text-center">Họ tên</th>
+                    <th class="text-center">Tên khoa</th>
+                    <th class="text-center">Giới tính</th>
+                    <th class="text-center">Email</th>
+                    <th class="text-center">SĐT</th>
+                    <th class="text-center">Mật khẩu</th>
+                    <th class="text-center">Trình độ</th>
+                    <th class="text-center">Hình ảnh</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="@item.MaGV">
+                        <td>@item.MaGV</td>
+                        <td>@item.HoTenGV</td>
+                        <td>@item.Khoa.TenKhoa</td>
+                        @if (item.GioiTinh == false)
+                        {
+                            <td>Nữ</td>
+
+                        }
+                        else
+                        {
+                            <td> Nam</td>
+                        }
+                        <td>@item.Email</td>
+                        <td>@item.SDT</td>
+                        <td>@item.MatKhau</td>
+                        <td>@item.TrinhDo</td>
+                        <td><img src="~/Content/IMG/@item.HinhAnh" class="rounded-circle" style="width:70px;height:70px;" /></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

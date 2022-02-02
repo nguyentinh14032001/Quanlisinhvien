@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "sv_Nganh_Index";
+    Layout = "~/Views/Shared/SinhVien_Layout.cshtml";
+}
+
+<div class="card">
+
+    <div class="card-header mb-3">
+
+        <div class="form-wrapper">
+            <div class="header-content">
+                <strong style="font-size:30px;" class="text-uppercase">Danh sách ngành</strong>
+            </div>
+           
+        </div>
+
+    </div>
+
+  
+
+
+
+
+    <div class="card-body p-3">
+        <table class="table table-bordered table-hover" id="result">
+            <thead>
+                <tr>
+
+                    <th class="text-center">Tên ngành</th>
+                    <th class="text-center">Tên khoa</th>
+                    <th class="text-center">Tổng số tín chỉ</th>
+                  
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="@item.MaNganh">
+
+                        <td class="text-center">@item.TenNganh</td>
+                        <td class="text-center">@item.Khoa.TenKhoa</td>
+                        <td class="text-center">@item.TongSTC</td>
+                      
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <h5 id="view-bag">Số lượng ngành là: @ViewBag.SoLuong</h5>
+       
+
+    </div>
+</div>
+

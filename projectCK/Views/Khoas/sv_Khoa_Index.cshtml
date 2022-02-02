@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "sv_Khoa_Index";
+    Layout = "~/Views/Shared/SinhVien_Layout.cshtml";
+}
+
+<div class="card">
+
+    <div class="card-header mb-3">
+
+
+        <div class="header-content">
+            <strong style="font-size:30px;" class="text-uppercase">Danh sách khoa</strong>
+        </div>
+    </div>
+
+
+
+
+    <div class="card-body p-3">
+        <table class="table table-bordered table-hover" id="result">
+            <thead>
+                <tr>
+                    <th class="text-center">Mã khoa</th>
+                    <th class="text-center">Tên khoa</th>
+                    <th class="text-center">Số điện thoại</th>
+                    <th class="text-center">Địa chỉ</th>
+                    <th class="text-center">Chức năng</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr id="@item.MaKhoa">
+
+                        <td class="text-center">@item.MaKhoa</td>
+                        <td class="text-center">@item.TenKhoa</td>
+                        <td class="text-center">@item.SDT</td>
+                        <td class="text-center">@item.DiaChi</td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
