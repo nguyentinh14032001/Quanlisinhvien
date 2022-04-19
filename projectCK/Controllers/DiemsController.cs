@@ -79,7 +79,7 @@ namespace projectCK.Controllers
                     }
                     else
                     {
-                        if (dtb >= 6)
+                        if (dtb >= )
                         {
                             diemchu = "B";
                             ketqua = "dat.jpg";
@@ -241,6 +241,16 @@ namespace projectCK.Controllers
             var list = db.Diems.Where(d => d.Id == Id).ToList();
             var a = JsonConvert.SerializeObject(list);
             return Json(a, JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        public JsonResult addsearch(string id)
+        {
+          
+           
+                var list = db.SinhViens.Where(d => d.MaSV.StartsWith(id.Trim())).ToList();
+                var a = JsonConvert.SerializeObject(list);
+                return Json(a, JsonRequestBehavior.AllowGet);
+            
         }
         [HttpPost]
         public JsonResult Getdata3(string id)

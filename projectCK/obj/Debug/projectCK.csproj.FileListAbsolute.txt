@@ -100,4 +100,3 @@ C:\Users\HS\source\repos\projectCK\projectCK\obj\Debug\projectCK.csproj.CoreComp
 C:\Users\HS\source\repos\projectCK\projectCK\obj\Debug\projectCK.csproj.CopyComplete
 C:\Users\HS\source\repos\projectCK\projectCK\obj\Debug\projectCK.dll
 C:\Users\HS\source\repos\projectCK\projectCK\obj\Debug\projectCK.pdb
-C:\Users\HS\source\repos\projectCK\projectCK\obj\Debug\projectCK.csproj.AssemblyReference.cache
